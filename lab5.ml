@@ -312,8 +312,8 @@ module MakeImpQueue (A : sig
       let rec mlist_string m =
         match m with
         | Cons (hd, tl) ->
-            if !tl = Nil then A.to_string hd ^ " -> ||"
-            else A.to_string hd ^ " -> " ^ mlist_string !tl
+            (* if !tl = Nil then A.to_string hd ^ " -> ||" *)
+            A.to_string hd ^ " -> " ^ mlist_string !tl
         | Nil -> ""
       in
       mlist_string !(q.front)
